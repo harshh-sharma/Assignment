@@ -165,3 +165,26 @@ export const createMember = async (req, res) => {
     });
   }
 };
+
+export const getOrganizationMembers = async (req, res) => {
+  try {
+    const orgId = req.user.orgId;
+
+    const members = await User.find({ orgId })
+      .select("-password") 
+      .sort({ createdAt: -1 });
+
+    return res.status(200).json({
+      success: true,
+      message: "Organization members fetched successfully",
+      data: members
+    });
+
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: error.message
+    });
+  }
+};
+

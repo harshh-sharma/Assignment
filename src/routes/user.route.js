@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createMember, login, register } from "../controllers/user.controller.js";
+import { createMember, getOrganizationMembers, login, register } from "../controllers/user.controller.js";
 import { isAdmin } from "../middleware/admin.middleware.js";
 import { protect } from "../middleware/auth.middleware.js";
 
@@ -9,6 +9,7 @@ router.post('/register', register);
 router.post('/login', login);
 
 router.post('/member', protect, isAdmin, createMember);
+router.get("/members", protect, getOrganizationMembers);
 
 
 export default router;
