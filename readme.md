@@ -12,4 +12,7 @@
  - Group Model
  - Message Model
 
- 
+
+# Defining user controller,routes
+ - Register & login controller / routes
+

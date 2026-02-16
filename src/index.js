@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 import express from "express";
 import connectionToDb from "./config/db.js";
+import userRouter from "./routes/user.route.js";
 dotenv.config();
 
 const app = express();
@@ -11,6 +12,9 @@ connectionToDb();
 app.get('/',(req, res) => {
     return res.send('Server is live');
 })
+
+
+app.use('/api/user', userRouter);
 
 app.listen(PORT, () => {
     console.log(`server successfully running on http://localhost:${PORT}`);
