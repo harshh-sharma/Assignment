@@ -1,7 +1,11 @@
+# Tech stack I use
+    - Express, Mongoose
+
+
 # Setup basic server with express
  - Commands to run to setup it
     - npm init (Initialize node server)
-    - Install Dependency (npm i express ...)
+    - Install Dependency (npm i express  bcrypt cors dotenv jsonwebtoken mongoose nodemon socket.io)
 
 # setup db connection
  - Database connection using mongoose
