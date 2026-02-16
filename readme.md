@@ -22,3 +22,6 @@
 
 # Defining Group Controller/routes
  - Admin can create groups , assign members to it and get all groups related user and organization
+
+# Defining message Controller/routes
+ - 

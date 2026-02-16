@@ -20,7 +20,7 @@ export const createGroup = async (req, res) => {
 
     return res.status(201).json({
       success: true,
-      data: group
+      data: {group}
     });
 
   } catch (error) {
@@ -41,7 +41,7 @@ export const getGroups = async (req, res) => {
 
     return res.status(200).json({
       success: true,
-      data: groups
+      data: {groups}
     });
 
   } catch (error) {
