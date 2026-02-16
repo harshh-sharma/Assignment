@@ -3,13 +3,13 @@ import Group from "../models/group.model.js";
 
 export const sendMessage = async (req, res) => {
   try {
-    const { content } = req.body;
+    const { text } = req.body;
     const { groupId } = req.params;
 
-    if (!content) {
+    if (!text) {
       return res.status(400).json({
         success: false,
-        message: "Message content required"
+        message: "Message text required"
       });
     }
 
@@ -33,8 +33,8 @@ export const sendMessage = async (req, res) => {
     }
 
     const message = await Message.create({
-      content,
-      sender: req.user._id,
+      text,
+      senderId: req.user._id,
       groupId,
       orgId: req.user.orgId
     });
@@ -60,7 +60,7 @@ export const getMessages = async (req, res) => {
       groupId,
       orgId: req.user.orgId
     })
-      .populate("sender", "name email")
+      .populate("senderId", "name email")
       .sort({ createdAt: 1 });
 
     return res.status(200).json({

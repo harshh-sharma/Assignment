@@ -23,5 +23,6 @@
 # Defining Group Controller/routes
  - Admin can create groups , assign members to it and get all groups related user and organization
 
-# Defining message Controller/routes
- - 
+# Defining message Controller/routes along with add socket.io
+ - user can send message , get all message related to group
+ - socket for real time messaging
