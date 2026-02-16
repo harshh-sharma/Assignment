@@ -16,3 +16,7 @@
 # Defining user controller,routes
  - Register & login controller / routes
 
+# Defining admin & auth Middleware
+ - Auth middleware -> Auth middleware is for checking user authenticated or not
+ - Admin middleware -> Admin middleware is for checking user is authorized or not
+
