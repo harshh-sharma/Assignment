@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 import express from "express";
 import connectionToDb from "./config/db.js";
 import userRouter from "./routes/user.route.js";
+import groupRouter from "./routes/group.route.js";
 dotenv.config();
 
 const app = express();
@@ -15,6 +16,7 @@ app.get('/',(req, res) => {
 
 
 app.use('/api/user', userRouter);
+app.use('/api/group', groupRouter);
 
 app.listen(PORT, () => {
     console.log(`server successfully running on http://localhost:${PORT}`);

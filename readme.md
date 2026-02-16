@@ -20,3 +20,5 @@
  - Auth middleware -> Auth middleware is for checking user authenticated or not
  - Admin middleware -> Admin middleware is for checking user is authorized or not
 
+# Defining Group Controller/routes
+ - Admin can create groups , assign members to it and get all groups related user and organization
